@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -18,6 +19,7 @@ public class QuestionActivity extends AppCompatActivity {
     QuestionController q = new QuestionController();
 
     public int res = 0;
+    private CountDownTimer countdowntimer;
     //  TextView tt=findViewById(R.id.namePrint);
 
     // int clickedOption=1;
@@ -29,6 +31,7 @@ public class QuestionActivity extends AppCompatActivity {
     int correct;
     ProgressBar progress;
     ArrayList<Integer> selected_answer;
+    int leftTime=10000;
 
 
     //
@@ -51,6 +54,7 @@ public class QuestionActivity extends AppCompatActivity {
         selected_answer.clear();
         //  selected_answer.add(0);
         progress.setMax(questionsList.size());
+       // startTimer();
 
 
         //  int qw=questionsList.size();
@@ -108,6 +112,8 @@ public class QuestionActivity extends AppCompatActivity {
 
                 } else
                     setQuestion(questionsList, ques_ans);
+                leftTime=10000;
+               // startTimer();
             }
         });
 
@@ -223,11 +229,5 @@ public class QuestionActivity extends AppCompatActivity {
 //            t.setText("Changed"+t.getId());
 //        }
     }
-
-//    void optioncl(View v)
-//    {
-//        Toast.makeText(QuestionActivity.this,"Hello",Toast.LENGTH_SHORT).show();
-//    }
-
-
+//
 }

@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="Welcome"
+        android:text="Register Yourself"
         android:textSize="30dp"
         android:textAlignment="center"/>
     <EditText
@@ -47,11 +47,19 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Username"
+        android:hint="email"
         android:layout_marginTop="12dp"
+        android:layout_marginBottom="20dp"
+       />
+    <EditText
+        android:id="@+id/pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Password"
         android:layout_marginBottom="50dp"
-        android:text="" />
-
+       />
 
     <Button
         android:id="@+id/btn"
@@ -59,6 +67,16 @@
         android:layout_height="wrap_content"
         android:text="Submit"
         android:textSize="20dp"/>
+    <TextView
+        android:id="@+id/login"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Log in"
+
+        />
+
+
 
 </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.cardview.widget.CardView>
