@@ -40,9 +40,9 @@ public class DashBoard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 t12.setBackgroundColor(R.drawable.option_border);
-//                Intent intent = new Intent(DashBoard.this,
-//                        QuestionActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(DashBoard.this,
+                        Name_and_Category.class);
+                startActivity(intent);
                 // finish();
             }
         });
