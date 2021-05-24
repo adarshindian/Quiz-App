@@ -47,6 +47,7 @@ public class Login1 extends AppCompatActivity {
         });
     }
     private void loginCheck(EditText email, EditText pass1et) {
+
         fire=FirebaseAuth.getInstance();
         fire.signInWithEmailAndPassword(email.getText().toString(),pass1et.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override

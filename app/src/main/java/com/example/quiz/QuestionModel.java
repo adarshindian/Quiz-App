@@ -2,7 +2,7 @@ package com.example.quiz;
 
 
 public class QuestionModel {
-    int id;
+
     String question_text;
     String optionOne;
     String optionTwo;
@@ -10,8 +10,8 @@ public class QuestionModel {
     String optionFour;
     int correctAnswer;
 
-    public QuestionModel(int id, String question_text, String optionOne, String optionTwo, String optionThree, String optionFour, int correctAnswer) {
-        this.id = id;
+    public QuestionModel( String question_text, String optionOne, String optionTwo, String optionThree, String optionFour, int correctAnswer) {
+
         this.question_text = question_text;
         this.optionOne = optionOne;
         this.optionTwo = optionTwo;

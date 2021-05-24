@@ -6,7 +6,7 @@ public class QuestionController {
     ArrayList getQuestion(){
     ArrayList<QuestionModel> arrli
             = new ArrayList<QuestionModel>(3);
-    QuestionModel q1=new QuestionModel(1,
+    QuestionModel q1=new QuestionModel(
             "What is JDBC",
             "Jquery Database Connectivity",
             "Java Database Connectivity",
@@ -14,7 +14,7 @@ public class QuestionController {
             "Both can be particular Scenario",
             2);
     arrli.add(q1);
-    QuestionModel q2=new QuestionModel(1,
+    QuestionModel q2=new QuestionModel(
             "Fullform of OS",
             "Order of Significance",
             "Open Software",
@@ -22,14 +22,14 @@ public class QuestionController {
             "Optical Sensor",
             3);
         arrli.add(q2);
-    QuestionModel q3=new QuestionModel(1,
+            QuestionModel q3=new QuestionModel(
             "Which among them is JS Library",
             "Django",
             "Laravell",
             "Kotlin",
             "Non of them",4);
         arrli.add(q3);
-        QuestionModel q4=new QuestionModel(1,
+        QuestionModel q4=new QuestionModel(
                 "Full form of CPU",
                 "Central Processing Unit",
                 "Central Programming Unit",
