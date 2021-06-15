@@ -5,13 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 
@@ -27,7 +32,7 @@ public class QuestionActivity extends AppCompatActivity {
     int no_of_click = 0;
     //This ArrayLIst  Holds Question and Answer from 0 to 4 by method setQuestion
     ArrayList<TextView> ques_ans = new ArrayList<>(5);
-
+    FirebaseFirestore f=FirebaseFirestore.getInstance();
     int correct;
     ProgressBar progress;
     ArrayList<Integer> selected_answer;
@@ -39,6 +44,17 @@ public class QuestionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
+        DocumentReference docRef = f.collection("Category").document("Physics").collection("Adar").document("Question0");
+        docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                QuestionModel q = documentSnapshot.toObject(QuestionModel.class);
+                Toast.makeText(QuestionActivity.this, q.getQuestion_text(), Toast.LENGTH_SHORT).show();
+                Log.d("abcdefg", q.getOptionFour());
+            }
+        });
+//        DocumentReference df= f.collection("Category").document(stuff).collection(tst_name.getText().toString()).document("Question"+i);
+//        df.set(q).addOnSuccessListener(aVoid ->
         //Adding Question and answer in TextView Arraylist ques_ans
         //  tt.setText(getIntent().getStringExtra("prin"));
         // progress.setProgress(1);

@@ -9,7 +9,7 @@ public class QuestionModel extends Object{
     public String optionThree;
     public String optionFour;
     public int correctAnswer;
-
+public QuestionModel(){}
     public QuestionModel( String question_text, String optionOne, String optionTwo, String optionThree, String optionFour, int correctAnswer) {
 
         this.question_text = question_text;
