@@ -48,16 +48,18 @@ public class Login1 extends AppCompatActivity {
     }
     private void loginCheck(EditText email, EditText pass1et) {
 
+
+        Intent intent = new Intent(Login1.this,
+                DashBoard.class);
+        startActivity(intent);
+        finish();
         fire=FirebaseAuth.getInstance();
         fire.signInWithEmailAndPassword(email.getText().toString(),pass1et.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
               //  Log.d("checkAct", "Login onSuccess() called with: authResult = [" + authResult + "]"+TAG);
                 Toast.makeText(Login1.this, "Successfully Login", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(Login1.this,
-                                DashBoard.class);
-                        startActivity(intent);
-                        finish();
+
             }
 
         });
